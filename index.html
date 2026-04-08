@@ -195,10 +195,205 @@ footer {
   <img src="your-image.jpg" class="profile-img">
   <h1>Shahd Abu Nofal</h1>
   <p>Software Engineering Student | Future Developer</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shahd Abu Nofal | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(270deg, #0f172a, #020617);
+  background-size: 400% 400%;
+  animation: bgMove 10s ease infinite;
+  color: white;
+}
+
+@keyframes bgMove {
+  0% {background-position: 0%}
+  50% {background-position: 100%}
+  100% {background-position: 0%}
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 100px 20px 70px;
+}
+
+.profile-img {
+  width: 140px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 0 30px rgba(0,198,255,0.8);
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  font-size: 38px;
+}
+
+header p {
+  opacity: 0.9;
+  margin: 10px 0;
+}
+
+/* BUTTONS */
+.hero-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #00c6ff;
+  color: black;
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+}
+
+.hero-buttons a:hover {
+  transform: scale(1.05);
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  padding: 12px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #00c6ff;
+}
+
+/* SECTIONS */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  background: #1e293b;
+  padding: 30px;
+  margin: 30px 0;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  color: #00c6ff;
+  margin-bottom: 20px;
+}
+
+/* SKILLS */
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill-bar {
+  background: #334155;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 10px;
+  background: #00c6ff;
+}
+
+/* PROJECT */
+.project {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.project a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  color: #00c6ff;
+}
+
+/* CONTACT */
+.contact a {
+  color: #00c6ff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+/* ANIMATION */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="Screenshot_20260404-124831_Gallery.jpg" class="profile-img">
+
+  <h1>Shahd Abu Nofal</h1>
+  <p>Software Engineering Student | Building Modern Web Experiences 🚀</p>
+
+  <p id="typing"></p>
 
   <div class="hero-buttons">
-    <a href="#" class="btn-primary">Download CV</a>
-    <a href="#" class="btn-outline">GitHub</a>
+    <a href="#projects" class="btn-primary">View My Work</a>
+    <a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9" class="btn-outline">LinkedIn</a>
   </div>
 </header>
 
@@ -213,20 +408,30 @@ footer {
 
 <section id="about" class="hidden">
 <h2>About Me</h2>
-<p>I am a passionate software engineering student who enjoys building modern web applications and improving continuously.</p>
+<p>I am a passionate software engineering student who enjoys building modern web applications and improving continuously. I am constantly learning new technologies and aiming to create impactful digital solutions.</p>
 </section>
 
 <section id="skills" class="hidden">
 <h2>Skills</h2>
 
 <div class="skill">
-<div class="skill-name">HTML</div>
+<p>HTML</p>
 <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
 </div>
 
 <div class="skill">
-<div class="skill-name">CSS</div>
+<p>CSS</p>
+<div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Problem Solving</p>
 <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+</div>
+
+<div class="skill">
+<p>Teamwork</p>
+<div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
 </div>
 
 </section>
@@ -235,24 +440,24 @@ footer {
 <h2>Projects</h2>
 
 <div class="project">
-<h3>Portfolio Website</h3>
-<p>Personal portfolio built using HTML & CSS.</p>
-<a href="#">Live Demo</a>
-<a href="#">GitHub</a>
+<h3>Personal Portfolio Website</h3>
+<p>A responsive and modern portfolio website built using HTML & CSS, showcasing my skills and projects.</p>
+<a href="#">🔗 Live Demo</a>
+<a href="#">💻 GitHub</a>
 </div>
 
 </section>
 
-<section id="contact" class="hidden">
+<section id="contact" class="hidden contact">
 <h2>Contact</h2>
-<p>Email: example@email.com</p>
-<p><a href="#">LinkedIn</a></p>
+<p>Email: your@email.com</p>
+<p><a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9">LinkedIn</a></p>
 </section>
 
 </div>
 
 <footer>
-<p>© 2026 Shahd Abu Nofal</p>
+<p>© 2026 Shahd Abu Nofal | Built with passion 💙</p>
 </footer>
 
 <script>
@@ -263,9 +468,20 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
-
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+const text = "Future Software Developer 🚀";
+let i = 0;
+
+function typing() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 50);
+  }
+}
+typing();
 </script>
 
 </body>
-</html>
+  </html>
