@@ -9,96 +9,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+* {margin:0; padding:0; box-sizing:border-box;}
 
 body {
   font-family:'Poppins', sans-serif;
-  background:#050816;
+  background:#0b0f1a;
   color:white;
-  overflow-x:hidden;
-}
-
-/* BACKGROUND GLOW */
-body::before {
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0,198,255,0.15), transparent),
-    radial-gradient(circle at 80% 80%, rgba(0,114,255,0.15), transparent);
-  z-index:-1;
+  line-height:1.6;
 }
 
 /* HEADER */
 header {
   text-align:center;
-  padding:120px 20px;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#0072ff,#00c6ff);
 }
 
 .profile-img {
-  width:160px;
+  width:130px;
   border-radius:50%;
-  border:3px solid #00c6ff;
-  box-shadow:0 0 40px rgba(0,198,255,0.8);
-  margin-bottom:20px;
-  transition:0.4s;
+  border:4px solid white;
+  margin-bottom:15px;
 }
 
-.profile-img:hover {
-  transform:scale(1.08);
-}
-
-/* NAME */
 h1 {
-  font-size:42px;
-  background:linear-gradient(90deg,#00c6ff,#0072ff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  font-size:32px;
 }
 
-/* SUBTITLE */
 .subtitle {
-  opacity:0.85;
-  margin-top:10px;
   font-size:16px;
+  opacity:0.9;
 }
 
-/* TYPING */
-#typing {
-  margin-top:12px;
-  color:#00c6ff;
-  font-size:18px;
+/* NAV */
+nav {
+  background:#020617;
+  padding:12px;
+  text-align:center;
 }
 
-/* BUTTONS */
-.buttons a {
-  display:inline-block;
-  margin:12px;
-  padding:13px 24px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
-}
-
-.btn-main {
-  background:linear-gradient(90deg,#00c6ff,#0072ff);
+nav a {
+  margin:0 15px;
   color:white;
-}
-
-.btn-outline {
-  border:2px solid #00c6ff;
-  color:#00c6ff;
-}
-
-.buttons a:hover {
-  transform:translateY(-4px);
-  box-shadow:0 0 15px rgba(0,198,255,0.5);
+  text-decoration:none;
+  font-size:14px;
 }
 
 /* CONTAINER */
@@ -110,57 +64,55 @@ h1 {
 
 /* SECTION */
 section {
-  margin:40px 0;
-  padding:35px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.04);
-  backdrop-filter:blur(15px);
-  border:1px solid rgba(255,255,255,0.08);
-  transition:0.3s;
-}
-
-section:hover {
-  transform:translateY(-5px);
-  box-shadow:0 0 30px rgba(0,198,255,0.2);
+  margin:30px 0;
+  padding:25px;
+  background:#111827;
+  border-radius:12px;
 }
 
 h2 {
   color:#00c6ff;
-  margin-bottom:15px;
+  margin-bottom:10px;
+}
+
+/* SKILLS */
+.skill {
+  margin:10px 0;
+}
+
+.bar {
+  background:#1e293b;
+  border-radius:10px;
+}
+
+.fill {
+  height:10px;
+  background:#00c6ff;
 }
 
 /* LIST */
 ul {
-  margin-top:10px;
   padding-left:20px;
 }
 
-li {
-  margin-bottom:10px;
+/* PROJECT */
+.project {
+  background:#020617;
+  padding:15px;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+/* CONTACT */
+a {
+  color:#00c6ff;
 }
 
 /* FOOTER */
 footer {
   text-align:center;
-  padding:30px;
+  padding:20px;
   opacity:0.6;
-}
-
-/* ANIMATION */
-.hidden {
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.6s;
-}
-
-.show {
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  h1 {font-size:30px;}
 }
 </style>
 </head>
@@ -168,76 +120,103 @@ footer {
 <body>
 
 <header>
-
-<img src="Screenshot_20260404-124831_Gallery.jpg" class="profile-img">
-
-<h1>Shahd Abu Nofal</h1>
-
-<p class="subtitle">
-Software Engineering Student | Future Web Developer 🚀
-</p>
-
-<p id="typing"></p>
-
-<div class="buttons">
-<a href="mailto:Shahedabunofal@gmail.com" class="btn-main">📧 Email Me</a>
-<a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9" class="btn-outline">LinkedIn</a>
-</div>
-
+  <img src="Screenshot_20260404-124831_Gallery.jpg" class="profile-img">
+  <h1>Shahd Abu Nofal</h1>
+  <p class="subtitle">Software Engineering Student | Future Web Developer</p>
 </header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#goals">Goals</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <div class="container">
 
-<section class="hidden">
+<section id="about">
 <h2>About Me</h2>
-
 <p>
-I am a passionate Software Engineering student focused on building modern, user-friendly web applications. 
-I have experience with HTML, CSS, and Java, and I am continuously developing my skills to become a professional web developer.
+I am a Software Engineering student passionate about building modern web applications and continuously improving my technical skills. I enjoy learning new technologies and applying them in real-world projects.
 </p>
+</section>
 
+<section id="education">
+<h2>Education</h2>
 <ul>
 <li>🎓 Software Engineering Student</li>
-<li>💻 Web Development Focus</li>
-<li>⚡ HTML, CSS, Java</li>
-<li>🚀 Continuous Learning</li>
+<li>📍 University Student</li>
+<li>📚 Focus on Web Development</li>
 </ul>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+
+<div class="skill">
+<p>HTML</p>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<p>CSS</p>
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<p>Java</p>
+<div class="bar"><div class="fill" style="width:75%"></div></div>
+</div>
+
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<p>
+Currently learning and building personal projects in web development. Focused on improving front-end skills and understanding modern design principles.
+</p>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="project">
+<h3>Portfolio Website</h3>
+<p>Personal portfolio built using HTML and CSS to showcase my profile and skills.</p>
+</div>
+
+<div class="project">
+<h3>Landing Page</h3>
+<p>Responsive web page designed to practice UI/UX and layout skills.</p>
+</div>
+
+</section>
+
+<section id="goals">
+<h2>Career Goals</h2>
+<ul>
+<li>🚀 Become a professional web developer</li>
+<li>💻 Work on real-world projects</li>
+<li>🌍 Build impactful digital solutions</li>
+</ul>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+
+<p>Email: <a href="mailto:Shahedabunofal@gmail.com">Shahedabunofal@gmail.com</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9">My Profile</a></p>
 
 </section>
 
 </div>
 
 <footer>
-<p>© 2026 Shahd Abu Nofal | Designed professionally 💙</p>
+<p>© 2026 Shahd Abu Nofal</p>
 </footer>
-
-<script>
-
-/* SCROLL ANIMATION */
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
-
-/* TYPING EFFECT */
-const text = "Building modern web experiences ✨";
-let i=0;
-
-function typing(){
-if(i<text.length){
-document.getElementById("typing").innerHTML += text.charAt(i);
-i++;
-setTimeout(typing,50);
-}
-}
-
-typing();
-
-</script>
 
 </body>
 </html>
