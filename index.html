@@ -10,176 +10,202 @@
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(270deg, #0f172a, #020617);
-  background-size: 400% 400%;
-  animation: bgMove 10s ease infinite;
-  color: white;
+  font-family:'Poppins', sans-serif;
+  background:#0b0f1a;
+  color:white;
+  overflow-x:hidden;
 }
 
-@keyframes bgMove {
-  0% {background-position: 0%}
-  50% {background-position: 100%}
-  100% {background-position: 0%}
-}
-
-/* SCROLL BAR */
-#progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 4px;
-  background: #00c6ff;
-  width: 0%;
-  z-index: 9999;
+/* Animated background */
+body::before {
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 20% 20%, rgba(0,198,255,0.2), transparent),
+              radial-gradient(circle at 80% 80%, rgba(0,114,255,0.2), transparent);
+  z-index:-1;
 }
 
 /* HEADER */
 header {
-  text-align: center;
-  padding: 80px 20px;
+  text-align:center;
+  padding:120px 20px;
 }
 
 .profile-img {
-  width: 140px;
-  border-radius: 50%;
-  border: 4px solid white;
-  box-shadow: 0 0 30px rgba(0,198,255,0.8);
+  width:150px;
+  border-radius:50%;
+  border:3px solid #00c6ff;
+  box-shadow:0 0 30px rgba(0,198,255,0.7);
+  margin-bottom:20px;
+  transition:0.3s;
+}
+
+.profile-img:hover {
+  transform:scale(1.05);
 }
 
 h1 {
-  margin-top: 15px;
-  font-size: 38px;
+  font-size:42px;
+  background:linear-gradient(90deg,#00c6ff,#0072ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.subtitle {
+  opacity:0.8;
+}
+
+#typing {
+  margin-top:10px;
+  color:#00c6ff;
 }
 
 /* BUTTONS */
-.hero-buttons a {
-  margin: 10px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: 0.3s;
+.buttons a {
+  display:inline-block;
+  margin:10px;
+  padding:12px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
 }
 
-.btn-primary {
-  background: #00c6ff;
-  color: black;
+.btn-main {
+  background:#00c6ff;
+  color:black;
 }
 
 .btn-outline {
-  border: 2px solid white;
-  color: white;
+  border:2px solid #00c6ff;
+  color:#00c6ff;
 }
 
-.hero-buttons a:hover {
-  transform: translateY(-3px);
+.buttons a:hover {
+  transform:translateY(-3px);
 }
 
 /* NAV */
 nav {
-  position: sticky;
-  top: 0;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-  text-align: center;
-  padding: 12px;
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  padding:12px;
+  text-align:center;
 }
 
 nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
+  margin:0 15px;
+  text-decoration:none;
+  color:white;
+}
+
+nav a:hover {
+  color:#00c6ff;
 }
 
 /* SECTIONS */
 .container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
 
 section {
-  background: rgba(30,41,59,0.6);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  margin: 30px 0;
-  border-radius: 20px;
-  transition: 0.3s;
+  margin:40px 0;
+  padding:30px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+/* Animation reveal */
+.hidden {
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
+}
+
+.show {
+  opacity:1;
+  transform:translateY(0);
 }
 
 section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,198,255,0.2);
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(0,198,255,0.2);
 }
 
 h2 {
-  color: #00c6ff;
+  color:#00c6ff;
 }
 
 /* SKILLS */
-.skill-bar {
-  background: #334155;
-  border-radius: 10px;
-  overflow: hidden;
+.bar {
+  background:#1e293b;
+  border-radius:10px;
 }
 
-.skill-fill {
-  height: 10px;
-  background: #00c6ff;
+.fill {
+  height:10px;
+  background:#00c6ff;
+  border-radius:10px;
 }
 
-/* PROJECT GRID */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+/* PROJECTS */
+.projects {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
 }
 
-.project {
-  background: #0f172a;
-  padding: 20px;
-  border-radius: 15px;
-  transition: 0.3s;
+.card {
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  transition:0.3s;
 }
 
-.project:hover {
-  transform: scale(1.03);
-}
-
-.project a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #00c6ff;
+.card:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 20px rgba(0,198,255,0.4);
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.7;
+  text-align:center;
+  padding:30px;
+  opacity:0.7;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  h1 {font-size:30px;}
 }
 </style>
 </head>
 
 <body>
 
-<div id="progress"></div>
-
 <header>
   <img src="Screenshot_20260404-124831_Gallery.jpg" class="profile-img">
   <h1>Shahd Abu Nofal</h1>
-  <p>Software Engineering Student | Building Modern Web Experiences 🚀</p>
+  <p class="subtitle">Software Engineering Student</p>
+  <p id="typing"></p>
 
-  <div class="hero-buttons">
-    <a href="#projects" class="btn-primary">View My Work</a>
+  <div class="buttons">
+    <a href="#projects" class="btn-main">View My Work</a>
     <a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9" class="btn-outline">LinkedIn</a>
   </div>
 </header>
@@ -193,69 +219,73 @@ footer {
 
 <div class="container">
 
-<section id="about">
+<section id="about" class="hidden">
 <h2>About Me</h2>
-<p>
-I am a motivated Software Engineering student passionate about building modern web applications and improving continuously.
-</p>
+<p>I am passionate about building modern web applications and continuously improving my skills.</p>
 </section>
 
-<section id="skills">
+<section id="skills" class="hidden">
 <h2>Skills</h2>
 
 <p>HTML</p>
-<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
 
 <p>CSS</p>
-<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-
-<p>Problem Solving</p>
-<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+<div class="bar"><div class="fill" style="width:85%"></div></div>
 
 </section>
 
-<section id="projects">
+<section id="projects" class="hidden">
 <h2>Projects</h2>
 
-<div class="projects-grid">
-
-<div class="project">
-<h3>Portfolio Website</h3>
-<p>Modern personal portfolio website.</p>
-<a href="#">Live Demo</a>
+<div class="projects">
+<div class="card">
+<h3>Portfolio</h3>
+<p>Modern responsive website</p>
 </div>
 
-<div class="project">
+<div class="card">
 <h3>Landing Page</h3>
-<p>Responsive landing page design.</p>
+<p>Clean UI design</p>
 </div>
-
 </div>
 
 </section>
 
-<section id="contact">
+<section id="contact" class="hidden">
 <h2>Contact</h2>
-
-<a href="mailto:Shahedabunofal@gmail.com">📧 Send Email</a><br><br>
-
+<a href="mailto:Shahedabunofal@gmail.com">Email</a><br>
 <a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9">LinkedIn</a>
-
 </section>
 
 </div>
 
 <footer>
-<p>© 2026 Shahd Abu Nofal 💙</p>
+<p>© 2026 Shahd Abu Nofal</p>
 </footer>
 
 <script>
-window.onscroll = () => {
-  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  let scrolled = (winScroll / height) * 100;
-  document.getElementById("progress").style.width = scrolled + "%";
-};
+/* Scroll reveal */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+/* Typing */
+const text = "Future Developer 🚀";
+let i=0;
+function typing(){
+  if(i<text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing,50);
+  }
+}
+typing();
 </script>
 
 </body>
