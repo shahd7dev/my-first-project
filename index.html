@@ -1,259 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shahd Abu Nofal | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<title>Shahd Abu Nofal | Portfolio</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #222;
-      line-height: 1.6;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    header {
-      background: linear-gradient(135deg, #0a66c2, #084b8a);
-      color: white;
-      text-align: center;
-      padding: 70px 20px 50px;
-    }
+<style>
 
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      margin-bottom: 20px;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+  color: white;
+}
 
-    header p {
-      font-size: 18px;
-      opacity: 0.95;
-    }
+/* ===== HEADER ===== */
+header {
+  background: linear-gradient(135deg, #0a66c2, #001f3f);
+  text-align: center;
+  padding: 100px 20px 80px;
+}
 
-    nav {
-      background-color: #083d70;
-      text-align: center;
-      padding: 14px 10px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    }
+.profile-img {
+  width: 140px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 14px;
-      font-weight: bold;
-      font-size: 15px;
-    }
+.profile-img:hover {
+  transform: scale(1.05);
+}
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+header h1 {
+  font-size: 40px;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
+header p {
+  opacity: 0.9;
+  margin: 10px 0 20px;
+}
 
-    section {
-      background: white;
-      margin: 20px 0;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    }
+.hero-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    h2 {
-      color: #0a66c2;
-      margin-bottom: 15px;
-      font-size: 28px;
-    }
+.btn-primary {
+  background: #00c6ff;
+  color: black;
+}
 
-    p {
-      font-size: 16px;
-    }
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
 
-    ul {
-      padding-left: 20px;
-      margin-top: 10px;
-    }
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+}
 
-    ul li {
-      margin-bottom: 10px;
-    }
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
 
-    .project-box {
-      background: linear-gradient(135deg, #eef5fc, #f8fbff);
-      border-left: 5px solid #0a66c2;
-      padding: 20px;
-      border-radius: 12px;
-      margin-top: 10px;
-    }
+/* ===== NAV ===== */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  padding: 12px;
+}
 
-    .project-box h3 {
-      margin-bottom: 10px;
-      color: #083d70;
-    }
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
 
-    .buttons {
-      margin-top: 15px;
-    }
+nav a:hover {
+  color: #00c6ff;
+}
 
-    .buttons a {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-      padding: 12px 20px;
-      background: #0a66c2;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* ===== SECTIONS ===== */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
 
-    .buttons a:hover {
-      background: #084b8a;
-      transform: translateY(-2px);
-    }
+section {
+  background: #1e293b;
+  padding: 30px;
+  margin: 30px 0;
+  border-radius: 20px;
+  transition: 0.3s;
+}
 
-    .contact-info p {
-      margin-bottom: 10px;
-    }
+section:hover {
+  transform: translateY(-5px);
+}
 
-    .contact-info a {
-      color: #0a66c2;
-      text-decoration: none;
-      font-weight: bold;
-    }
+h2 {
+  color: #00c6ff;
+  margin-bottom: 20px;
+}
 
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
+/* ===== SKILLS ===== */
+.skill {
+  margin-bottom: 15px;
+}
 
-    footer {
-      background: #0a66c2;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
+.skill-name {
+  margin-bottom: 5px;
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
-      }
+.skill-bar {
+  background: #334155;
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-      header p {
-        font-size: 16px;
-      }
+.skill-fill {
+  height: 10px;
+  background: #00c6ff;
+}
 
-      nav a {
-        display: inline-block;
-        margin: 8px;
-      }
+/* ===== PROJECT ===== */
+.project {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 15px;
+}
 
-      .profile-img {
-        width: 120px;
-        height: 120px;
-      }
+.project h3 {
+  margin-bottom: 10px;
+}
 
-      section {
-        padding: 22px;
-      }
-    }
-  </style>
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  color: #00c6ff;
+}
+
+/* ===== CONTACT ===== */
+.contact a {
+  color: #00c6ff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+/* ===== ANIMATION ===== */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
 </head>
+
 <body>
 
-  <header>
-    <img src="Screenshot_20260404-124831_Gallery.jpg" alt="Shahd Abu Nofal" class="profile-img">
-    <h1>Shahd Abu Nofal</h1>
-    <p>Software Engineering Student | Future Software Developer 🚀</p>
-  </header>
+<header>
+  <img src="your-image.jpg" class="profile-img">
+  <h1>Shahd Abu Nofal</h1>
+  <p>Software Engineering Student | Future Developer</p>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="container">
-
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hello! I'm Shahd Abu Nofal, a Software Engineering student passionate about web development.
-        I enjoy building useful projects, learning new technologies, and improving my skills every day.
-        This portfolio represents one of my first real steps in my journey as a future developer.
-      </p>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Basic Web Design</li>
-        <li>Problem Solving</li>
-        <li>Teamwork</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project-box">
-        <h3>Personal Portfolio Website</h3>
-        <p>
-          A personal portfolio website built using HTML and CSS to showcase my profile,
-          skills, and contact information in a clean and professional way.
-        </p>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:Shahedabunofal@gmail.com">Shahedabunofal@gmail.com</a></p>
-        <p>
-          LinkedIn:
-          <a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">
-            My LinkedIn Profile
-          </a>
-        </p>
-      </div>
-
-      <div class="buttons">
-        <a href="mailto:Shahedabunofal@gmail.com">📧 Email Me</a>
-        <a href="https://www.linkedin.com/in/shahd-abu-nofal-3008a83a9?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">💼 LinkedIn</a>
-      </div>
-    </section>
-
+  <div class="hero-buttons">
+    <a href="#" class="btn-primary">Download CV</a>
+    <a href="#" class="btn-outline">GitHub</a>
   </div>
+</header>
 
-  <footer>
-    <p>© 2026 Shahd Abu Nofal. All rights reserved.</p>
-  </footer>
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<section id="about" class="hidden">
+<h2>About Me</h2>
+<p>I am a passionate software engineering student who enjoys building modern web applications and improving continuously.</p>
+</section>
+
+<section id="skills" class="hidden">
+<h2>Skills</h2>
+
+<div class="skill">
+<div class="skill-name">HTML</div>
+<div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">CSS</div>
+<div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
+</div>
+
+</section>
+
+<section id="projects" class="hidden">
+<h2>Projects</h2>
+
+<div class="project">
+<h3>Portfolio Website</h3>
+<p>Personal portfolio built using HTML & CSS.</p>
+<a href="#">Live Demo</a>
+<a href="#">GitHub</a>
+</div>
+
+</section>
+
+<section id="contact" class="hidden">
+<h2>Contact</h2>
+<p>Email: example@email.com</p>
+<p><a href="#">LinkedIn</a></p>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 Shahd Abu Nofal</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
